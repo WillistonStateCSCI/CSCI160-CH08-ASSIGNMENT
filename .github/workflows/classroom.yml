@@ -1,0 +1,199 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Q08_50 Test 1
+      id: q08_50-test-1
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Q08_50 Test 1
+        setup-command: javac Q08_50/*.java
+        command: java -cp Q08_50 ArrayProduct 1 2 3 4 5 6
+        input: ''
+        expected-output: |-
+          The elements are 1 2 3 4 5 6
+          The product of all elements in the array is 720
+        comparison-method: contains
+        timeout: 10
+        max-score: 1
+    - name: Q08_50 Test 2
+      id: q08_50-test-2
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Q08_50 Test 2
+        setup-command: javac Q08_50/*.java
+        command: java -cp Q08_50 ArrayProduct 1 22 3 44 5 66
+        input: ''
+        expected-output: |-
+          The elements are 1 22 3 44 5 66
+          The product of all elements in the array is 958320
+        comparison-method: contains
+        timeout: 10
+        max-score: 1
+    - name: Q08_51 Test 1
+      id: q08_51-test-1
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Q08_51 Test 1
+        setup-command: javac Q08_51/*.java
+        command: java -cp Q08_51 ZeroArrayElements 1 2 3 4 5 6
+        input: ''
+        expected-output: |-
+          The elements are 1 2 3 4 5 6
+          Calling zeroArray method
+          The elements are 0 0 0 0 0 0
+        comparison-method: contains
+        timeout: 10
+        max-score: 1
+    - name: Q08_51 Test 2
+      id: q08_51-test-2
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Q08_51 Test 2
+        setup-command: javac Q08_51/*.java
+        command: java -cp Q08_51 ZeroArrayElements 1 22 3 44 5 66
+        input: ''
+        expected-output: |-
+          The elements are 1 22 3 44 5 66
+          Calling zeroArray method
+          The elements are 0 0 0 0 0 0
+        comparison-method: contains
+        timeout: 10
+        max-score: 1
+    - name: Q08_53 Test 1
+      id: q08_53-test-1
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Q08_53 Test 1
+        setup-command: javac Q08_53/*.java
+        command: java -cp Q08_53 ArrayElements90OrMore 90 80 91 82 93 80 99 100 120
+        input: ''
+        expected-output: |-
+          The elements are 90 80 91 82 93 80 99 100 120
+          The percentage of elements 90 or greater is 66.7%
+        comparison-method: contains
+        timeout: 10
+        max-score: 1
+    - name: Q08_53 Test 2
+      id: q08_53-test-2
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Q08_53 Test 2
+        setup-command: javac Q08_53/*.java
+        command: java -cp Q08_53 ArrayElements90OrMore 90 80 91 95 93 80 99 100 120
+        input: ''
+        expected-output: |-
+          The elements are 90 80 91 95 93 80 99 100 120
+          The percentage of elements 90 or greater is 77.8%
+        comparison-method: contains
+        timeout: 10
+        max-score: 1
+    - name: Q08_54 Test 1
+      id: q08_54-test-1
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Q08_54 Test 1
+        setup-command: javac Q08_54/*.java
+        command: java -cp Q08_54 ArrayDifference 1.5 2.6 3.1 5.9 10.6 0.5
+        input: ''
+        expected-output: |-
+          The elements are 1.5 2.6 3.1 5.9 10.6 0.5
+          The difference between the largest and smallest elements is 10.1
+        comparison-method: contains
+        timeout: 10
+        max-score: 1
+    - name: Q08_54 Test 2
+      id: q08_54-test-2
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Q08_54 Test 2
+        setup-command: javac Q08_54/*.java
+        command: java -cp Q08_54 ArrayDifference 2.5 2.6 2.999 2.3 2.111 2.7
+        input: ''
+        expected-output: |-
+          The elements are 2.5 2.6 2.999 2.3 2.111 2.7
+          The difference between the largest and smallest elements is 0.8879999999999999
+        comparison-method: contains
+        timeout: 10
+        max-score: 1
+    - name: Q08_56 Test 1
+      id: q08_56-test-1
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Q08_56 Test 1
+        setup-command: javac Q08_56/*.java
+        command: java -cp Q08_56 PercentTrue true false true false false false true
+        input: ''
+        expected-output: |-
+          The elements are true false true false false false true
+          The percentage of elements having the value true is 42.9%
+        comparison-method: contains
+        timeout: 10
+        max-score: 1
+    - name: Q08_56 Test 2
+      id: q08_56-test-2
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Q08_56 Test 2
+        setup-command: javac Q08_56/*.java
+        command: java -cp Q08_56 PercentTrue true false false false false false true
+        input: ''
+        expected-output: |-
+          The elements are true false false false false false true
+          The percentage of elements having the value true is 28.6%
+        comparison-method: contains
+        timeout: 10
+        max-score: 1
+    - name: Q08_60 Test 1
+      id: q08_60-test-1
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Q08_60 Test 1
+        setup-command: javac Q08_60/*.java
+        command: java -cp Q08_60 StringToCharArray Hello
+        input: ''
+        expected-output: The elements of the char array are H e l l o
+        comparison-method: contains
+        timeout: 10
+        max-score: 2
+    - name: Q08_60 Test 2
+      id: q08_60-test-2
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Q08_60 Test 2
+        setup-command: javac Q08_60/*.java
+        command: java -cp Q08_60 StringToCharArray HappyCoding!
+        input: ''
+        expected-output: The elements of the char array are H a p p y C o d i n g
+          !
+        comparison-method: contains
+        timeout: 10
+        max-score: 1
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        Q08_50-TEST-1_RESULTS: "${{steps.q08_50-test-1.outputs.result}}"
+        Q08_50-TEST-2_RESULTS: "${{steps.q08_50-test-2.outputs.result}}"
+        Q08_51-TEST-1_RESULTS: "${{steps.q08_51-test-1.outputs.result}}"
+        Q08_51-TEST-2_RESULTS: "${{steps.q08_51-test-2.outputs.result}}"
+        Q08_53-TEST-1_RESULTS: "${{steps.q08_53-test-1.outputs.result}}"
+        Q08_53-TEST-2_RESULTS: "${{steps.q08_53-test-2.outputs.result}}"
+        Q08_54-TEST-1_RESULTS: "${{steps.q08_54-test-1.outputs.result}}"
+        Q08_54-TEST-2_RESULTS: "${{steps.q08_54-test-2.outputs.result}}"
+        Q08_56-TEST-1_RESULTS: "${{steps.q08_56-test-1.outputs.result}}"
+        Q08_56-TEST-2_RESULTS: "${{steps.q08_56-test-2.outputs.result}}"
+        Q08_60-TEST-1_RESULTS: "${{steps.q08_60-test-1.outputs.result}}"
+        Q08_60-TEST-2_RESULTS: "${{steps.q08_60-test-2.outputs.result}}"
+      with:
+        runners: q08_50-test-1,q08_50-test-2,q08_51-test-1,q08_51-test-2,q08_53-test-1,q08_53-test-2,q08_54-test-1,q08_54-test-2,q08_56-test-1,q08_56-test-2,q08_60-test-1,q08_60-test-2
