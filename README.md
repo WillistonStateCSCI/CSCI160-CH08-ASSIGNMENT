@@ -119,7 +119,7 @@ The percentage of elements having the value true is 42.9%
 The elements are true false false false false false true  
 The percentage of elements having the value true is 28.6%  
 ## Q08_60 Instructions  
-Write an array-returning method that takes an array of *ints* as a parameter and returns an array of *booleans*, assigning *true* for any element of the parameter array greater than or equal to 100; and *false* otherwise  
+Write an array-returning method that takes an array of chars and returns the characters separated by a space.
 **Note: The main method is completed for you.  Do not make ANY changes in the main method.**  
 ### Q08_60 Test 1   
 **Terminal Compile Command:**  
