@@ -22,7 +22,7 @@ jobs:
         command: java -cp Q08_50 ArrayProduct 1 2 3 4 5 6
         input: ''
         expected-output: |-
-          The elements are 1 2 3 4 5 6
+          The elements are 1 2 3 4 5 6 
           The product of all elements in the array is 720
         comparison-method: contains
         timeout: 10
@@ -33,10 +33,10 @@ jobs:
       with:
         test-name: Q08_50 Test 2
         setup-command: javac Q08_50/*.java
-        command: java -cp Q08_50 ArrayProduct 1 22 3 44 5 66
+        command: java -cp Q08_50 ArrayProduct 1 22 3 44 5 66 
         input: ''
         expected-output: |-
-          The elements are 1 22 3 44 5 66
+          The elements are 1 22 3 44 5 66 
           The product of all elements in the array is 958320
         comparison-method: contains
         timeout: 10
@@ -47,12 +47,12 @@ jobs:
       with:
         test-name: Q08_51 Test 1
         setup-command: javac Q08_51/*.java
-        command: java -cp Q08_51 ZeroArrayElements 1 2 3 4 5 6
+        command: java -cp Q08_51 ZeroArrayElements 1 2 3 4 5 6 
         input: ''
         expected-output: |-
-          The elements are 1 2 3 4 5 6
+          The elements are 1 2 3 4 5 6 
           Calling zeroArray method
-          The elements are 0 0 0 0 0 0
+          The elements are 0 0 0 0 0 0 
         comparison-method: contains
         timeout: 10
         max-score: 1
@@ -65,7 +65,7 @@ jobs:
         command: java -cp Q08_51 ZeroArrayElements 1 22 3 44 5 66
         input: ''
         expected-output: |-
-          The elements are 1 22 3 44 5 66
+          The elements are 1 22 3 44 5 66 
           Calling zeroArray method
           The elements are 0 0 0 0 0 0
         comparison-method: contains
@@ -80,7 +80,7 @@ jobs:
         command: java -cp Q08_53 ArrayElements90OrMore 90 80 91 82 93 80 99 100 120
         input: ''
         expected-output: |-
-          The elements are 90 80 91 82 93 80 99 100 120
+          The elements are 90 80 91 82 93 80 99 100 120 
           The percentage of elements 90 or greater is 66.7%
         comparison-method: contains
         timeout: 10
@@ -91,10 +91,10 @@ jobs:
       with:
         test-name: Q08_53 Test 2
         setup-command: javac Q08_53/*.java
-        command: java -cp Q08_53 ArrayElements90OrMore 90 80 91 95 93 80 99 100 120
+        command: java -cp Q08_53 ArrayElements90OrMore 90 80 91 95 93 80 99 100 120 
         input: ''
         expected-output: |-
-          The elements are 90 80 91 95 93 80 99 100 120
+          The elements are 90 80 91 95 93 80 99 100 120 
           The percentage of elements 90 or greater is 77.8%
         comparison-method: contains
         timeout: 10
@@ -105,10 +105,10 @@ jobs:
       with:
         test-name: Q08_54 Test 1
         setup-command: javac Q08_54/*.java
-        command: java -cp Q08_54 ArrayDifference 1.5 2.6 3.1 5.9 10.6 0.5
+        command: java -cp Q08_54 ArrayDifference 1.5 2.6 3.1 5.9 10.6 0.5 
         input: ''
         expected-output: |-
-          The elements are 1.5 2.6 3.1 5.9 10.6 0.5
+          The elements are 1.5 2.6 3.1 5.9 10.6 0.5 
           The difference between the largest and smallest elements is 10.1
         comparison-method: contains
         timeout: 10
@@ -119,10 +119,10 @@ jobs:
       with:
         test-name: Q08_54 Test 2
         setup-command: javac Q08_54/*.java
-        command: java -cp Q08_54 ArrayDifference 2.5 2.6 2.999 2.3 2.111 2.7
+        command: java -cp Q08_54 ArrayDifference 2.5 2.6 2.999 2.3 2.111 2.7 
         input: ''
         expected-output: |-
-          The elements are 2.5 2.6 2.999 2.3 2.111 2.7
+          The elements are 2.5 2.6 2.999 2.3 2.111 2.7 
           The difference between the largest and smallest elements is 0.8879999999999999
         comparison-method: contains
         timeout: 10
@@ -136,7 +136,7 @@ jobs:
         command: java -cp Q08_56 PercentTrue true false true false false false true
         input: ''
         expected-output: |-
-          The elements are true false true false false false true
+          The elements are true false true false false false true 
           The percentage of elements having the value true is 42.9%
         comparison-method: contains
         timeout: 10
@@ -147,10 +147,10 @@ jobs:
       with:
         test-name: Q08_56 Test 2
         setup-command: javac Q08_56/*.java
-        command: java -cp Q08_56 PercentTrue true false false false false false true
+        command: java -cp Q08_56 PercentTrue true false false false false false true 
         input: ''
         expected-output: |-
-          The elements are true false false false false false true
+          The elements are true false false false false false true 
           The percentage of elements having the value true is 28.6%
         comparison-method: contains
         timeout: 10
@@ -163,7 +163,7 @@ jobs:
         setup-command: javac Q08_60/*.java
         command: java -cp Q08_60 StringToCharArray Hello
         input: ''
-        expected-output: The elements of the char array are H e l l o
+        expected-output: The elements of the char array are H e l l o 
         comparison-method: contains
         timeout: 10
         max-score: 2
@@ -175,7 +175,7 @@ jobs:
         setup-command: javac Q08_60/*.java
         command: java -cp Q08_60 StringToCharArray HappyCoding!
         input: ''
-        expected-output: The elements of the char array are H a p p y C o d i n g
+        expected-output: The elements of the char array are H a p p y C o d i n g 
           !
         comparison-method: contains
         timeout: 10
